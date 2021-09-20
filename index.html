@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupee Exchange</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 id="containerHeading">Currency Converter</h1>
+        <form class="formWrapper">
+            <div class="fieldWrapper">
+                <!-- <input type="number" name="fromAmount" id="fromAmount" min=0> -->
+                <label for="fromCurrencySelect">From</label>
+                <select name="fromCurrencySelect" id="fromCurrencySelect"></select>
+            </div>
+            <div class="fieldWrapper">
+                <label for="toCurrencySelect">To</label>
+                <select name="" id="toCurrencySelect"></select>
+            </div>
+
+            <button id='convertButton'>Convert</button>
+        </form>
+        <div class="resultSection">
+            
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

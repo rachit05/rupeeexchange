@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Cabin',sans-serif;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 5fr 3fr;
+      grid-template-columns: 4fr 5fr 3fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10vw;
+}
+
+.fieldWrapper {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  gap: 10px;
+  padding: 2vw 0;
+  margin-right: .6%;
+  width: 49%;
+}
+
+.fieldWrapper label {
+  color: rgba(197, 197, 197, 0.933);
+}
+
+.fieldWrapper select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(197, 197, 197, 0.933);
+  -webkit-appearance: menulist-button;
+}
+
+.fieldWrapper select::-webkit-scrollbar {
+  width: 1px;
+}
+
+.fieldWrapper select:hover, .fieldWrapper select:focus {
+  color: white;
+  border: 1px solid #494eff;
+  background: #494eff;
+}
+
+button {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  background: #494eff;
+  color: white;
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=style.css.map */
