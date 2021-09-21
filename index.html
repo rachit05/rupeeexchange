@@ -9,12 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1 id="logo">Swapster</h1>
     <div class="container">
-        <h1 id="containerHeading">Currency Converter</h1>
+        <div>
+            <h3 id="date"></h3>
+            <h1 id="containerHeading">Currency Converter</h1>
+            <p>
+                Choose the currency and the amounts to get the exchange rate
+            </p>
+        </div>
         <form class="formWrapper">
             <div class="fieldWrapper">
-                <!-- <input type="number" name="fromAmount" id="fromAmount" min=0> -->
                 <label for="fromCurrencySelect">From</label>
                 <select name="fromCurrencySelect" id="fromCurrencySelect"></select>
             </div>
@@ -22,14 +27,18 @@
                 <label for="toCurrencySelect">To</label>
                 <select name="" id="toCurrencySelect"></select>
             </div>
-
-            <button id='convertButton'>Convert</button>
+            <div class="fieldWrapper">
+                <label for="fromAmount">Amount</label>
+                <input type="number" name="fromAmount" id="fromAmount" min="1" value="1">
+            </div>
+            <div class="fieldWrapper">
+                <label for="fromAmount">&nbsp;</label>
+                <button id='convertButton'>Convert</button>
+            </div>
         </form>
-        <div class="resultSection">
-            
+        <div class="resultSection" id="resultSection">
         </div>
     </div>
-
     <script src="main.js"></script>
 </body>
 </html>
