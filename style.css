@@ -25,9 +25,10 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  background-image: url("/bg/bg.jpg");
-  background-position-y: 60vh;
+  background-image: url("/bg/Currency_Isometric.svg");
+  background-position: 30vw 0vh;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 @media (max-width: 786px) {
@@ -40,49 +41,50 @@ body {
   }
 }
 
-#logo {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: transparent;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  -webkit-text-stroke: 1px #aeae93;
+input[type=range] {
+  height: 1px;
+  -webkit-appearance: none;
+  width: 100%;
+  background: lightseagreen;
+  position: relative;
 }
 
-@media (max-width: 786px) {
-  #logo {
-    display: block;
-    width: 100%;
-    position: relative;
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-    z-index: 1000;
-    -webkit-text-stroke: 2px lightseagreen;
-    left: 0;
-    text-align: center;
-  }
+input[type=range]:hover::after {
+  position: absolute;
+  content: 'Drag!';
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+  color: lightseagreen;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-box-shadow: 0px 0px 0px #000000;
+          box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  background: lightseagreen;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
 }
 
 .container {
-  width: 80vw;
-  height: 95vh;
+  -webkit-filter: hue-rotate(40deg);
+          filter: hue-rotate(40deg);
+  width: 100vw;
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   gap: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5vw 10vw;
-  background: white;
+  padding: 4vw 10vw;
+  background: rgba(255, 255, 255, 0.644);
   position: relative;
-  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.56);
-          box-shadow: 0 0 1px rgba(0, 0, 0, 0.56);
-  border-radius: 20px;
 }
 
 @media (max-width: 786px) {
@@ -90,7 +92,6 @@ body {
     display: block;
     width: 100%;
     border-radius: 0;
-    margin-top: 10vh;
   }
 }
 
@@ -124,6 +125,7 @@ h1 {
 
 p {
   margin: 20px 0 50px 0;
+  font-weight: bolder;
 }
 
 .fieldWrapper {
@@ -146,6 +148,7 @@ p {
   color: #126d64ed;
   display: block;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .fieldWrapper select {

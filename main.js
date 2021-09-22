@@ -1,14 +1,21 @@
-let fromAmount = document.querySelector('#fromAmount');
+const fromCurrency = document.querySelector('#fromCurrencySelect');
+const toCurrency = document.querySelector('#toCurrencySelect');
+const fromAmount = document.querySelector('#fromAmount');
+const convertButton = document.querySelector('#convertButton');
+const resultSection = document.querySelector('#resultSection');
+const hueBar = document.querySelector('#hueBar');
 
-let fromCurrency = document.querySelector('#fromCurrencySelect');
-let toCurrency = document.querySelector('#toCurrencySelect');
-let convertButton = document.querySelector('#convertButton');
-let resultSection = document.querySelector('#resultSection');
-
-let date = document.querySelector('#date');
+const date = document.querySelector('#date');
 
 date.innerHTML = new Date().toDateString();
 
+
+hueBar.addEventListener('input', function (e) {
+	let {
+		value
+	} = e.target;
+	document.getElementById('container').style = `filter:hue-rotate(${value}deg)`
+})
 
 fetch('/list.json')
 	.then(res => res.json())
