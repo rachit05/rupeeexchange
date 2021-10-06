@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,48 +8,72 @@
     <title>Swapster</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- <h1 id="logo">Swapster</h1> -->
-    <div class="container mx-auto py-24" id="container">
-        <div class="flex gap-14">
-            <input class="flex-1 bg-black" type="range" name="hueBar" id="hueBar" min="0" max="360" value="40">
-            <h3 id="date" class="text-sm font-semibold text-gray-400"></h3>
+    <div id="bg">
+        <div id="circle-yellow" class="circle"></div>
+        <div id="circle-indigo" class="circle"></div>
+    </div>
+    <div class="container mx-auto lg:py-24 pt-12 relative" id="container">
+
+        <div class="grid grid-rows-2 gap-12 place-content-center">
+            <h3 id="date" class="text-sm font-semibold text-white rounded-md text-center py-2 px-4 bg-blue-900"></h3>
+            <input class="flex-1 h-0 w-max" type="range" name="hueBar" id="hueBar" min="0" max="360" value="180">
         </div>
-        <div class="grid-cols-3 grid gap-14 bg-blue-100 mt-24 p-20 rounded-lg">
-            <div class="grid grid-rows-2 gap-y-6 divide-y-2 divide-blue-300">
+
+
+        <div class="lg:grid-cols-3 grid lg:gap-14 bg-blue-100 p-10 md:p-20 lg:rounded-xl shadow-2xl ">
+
+
+            <div class="grid grid-rows-2 gap-y-6 lg:gap-y-6 divide-y-2 divide-blue-300">
                 <h1 id="containerHeading" class="text-5xl text-blue-900 font-bold">
                     <span class="font-thin text-2xl">Currency</span><br>Converter</h1>
                 <p class="text-blue-400 py-5">
                     Choose the currency and the amounts<br>to get the exchange rate
                 </p>
             </div>
-            <form class="formWrapper w-full grid grid-rows-3 gap-5">
+
+
+            <div class="w-full grid grid-rows-3 gap-5 order-last lg:order-none lg:mt-0 mt-10">
                 <div class="grid grid-cols-2 gap-2">
                     <div class="fieldWrapper flex flex-col gap-2">
                         <label for="fromCurrencySelect" class="text-blue-400">From</label>
-                        <select class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-400 focus:bg-blue-300 focus:text-white" name="fromCurrencySelect" id="fromCurrencySelect"></select>
+                        <select
+                            class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-400 focus:bg-blue-300 focus:text-white"
+                            name="fromCurrencySelect" id="fromCurrencySelect"></select>
                     </div>
                     <div class="fieldWrapper flex flex-col gap-2">
                         <label for="toCurrencySelect" class="text-blue-400">To</label>
-                        <select class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-400 focus:bg-blue-300 focus:text-white" name="" id="toCurrencySelect"></select>
+                        <select
+                            class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-400 focus:bg-blue-300 focus:text-white"
+                            name="" id="toCurrencySelect"></select>
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
                     <div class="fieldWrapper flex flex-col gap-2">
                         <label for="fromAmount" class="text-blue-400">Amount</label>
-                        <input class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-500 focus:ring-4 focus:ring-blue-500 outline-none focus:bg-blue-300 " type="number" name="fromAmount" id="fromAmount" min="1" value="1">
+                        <input
+                            class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-500 focus:ring-4 focus:ring-blue-500 outline-none focus:bg-blue-300 "
+                            type="number" name="fromAmount" id="fromAmount" min="1" value="1">
                     </div>
                 </div>
                 <div class="grid grid-cols-1">
-                    <button class="w-full h-12 mt-5 bg-blue-600 text-white rounded-sm hover:bg-blue-900 font-semibold text-lg" id='convertButton'>Convert</button>
+                    <button
+                        class="w-full h-12 mt-5 bg-blue-600 text-white rounded-sm hover:bg-blue-900 font-semibold text-lg"
+                        id='convertButton'>Convert</button>
                 </div>
-            </form>
-            <div class="bg-red-200 rounded-lg grid items-center justify-center" id="resultSection"></div>
+            </div>
+
+
+            <div class="lg:grid lg:grid-rows-2 lg:gap-8 py-6 flex flex-row" id="resultSection"></div>
+
+
         </div>
 
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>
