@@ -1,0 +1,16 @@
+{
+    "short_name" : "SCC",
+    "name":"Swapster - Currency Converter",
+    "icons": [
+        {
+            "src" : "./Favicon.svg",
+            "type" : "image/svg+xml",
+            "size" : "32x32"
+        }
+    ],
+    "start_url": "/index.html",
+    "background_color":"#fff",
+
+    "display":"standalone",
+    "theme_color":"#fff"
+} 

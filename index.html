@@ -4,11 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swapster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Web application for converting currencies">
+    <meta name="theme-color" content="#fff">
+    <link rel= "manifest" href= "manifest.json" />
+
+    <script>
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+
+    <title>Swapster - Currency Converter</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
 </head>
 
 <body>
