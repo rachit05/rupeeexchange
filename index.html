@@ -5,40 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swapster</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <!-- <h1 id="logo">Swapster</h1> -->
-    <div class="container" id="container">
-        <input type="range" name="hueBar" id="hueBar" min="0" max="360" value="40">
-        <div>
-            <h3 id="date"></h3>
-            <h1 id="containerHeading">Currency Converter</h1>
-            <p>
-                Choose the currency and the amounts<br>to get the exchange rate
-            </p>
+    <div class="container mx-auto py-24" id="container">
+        <div class="flex gap-14">
+            <input class="flex-1 bg-black" type="range" name="hueBar" id="hueBar" min="0" max="360" value="40">
+            <h3 id="date" class="text-sm font-semibold text-gray-400"></h3>
         </div>
-        <form class="formWrapper">
-            <div class="fieldWrapper">
-                <label for="fromCurrencySelect">From</label>
-                <select name="fromCurrencySelect" id="fromCurrencySelect"></select>
+        <div class="grid-cols-3 grid gap-14 bg-blue-100 mt-24 p-20 rounded-lg">
+            <div class="grid grid-rows-2 gap-y-6 divide-y-2 divide-blue-300">
+                <h1 id="containerHeading" class="text-5xl text-blue-900 font-bold">
+                    <span class="font-thin text-2xl">Currency</span><br>Converter</h1>
+                <p class="text-blue-400 py-5">
+                    Choose the currency and the amounts<br>to get the exchange rate
+                </p>
             </div>
-            <div class="fieldWrapper">
-                <label for="toCurrencySelect">To</label>
-                <select name="" id="toCurrencySelect"></select>
-            </div>
-            <div class="fieldWrapper">
-                <label for="fromAmount">Amount</label>
-                <input type="number" name="fromAmount" id="fromAmount" min="1" value="1">
-            </div>
-            <div class="fieldWrapper">
-                <label for="fromAmount">&nbsp;</label>
-                <button id='convertButton'>Convert</button>
-            </div>
-        </form>
-        <div class="resultSection" id="resultSection">
+            <form class="formWrapper w-full grid grid-rows-3 gap-5">
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="fieldWrapper flex flex-col gap-2">
+                        <label for="fromCurrencySelect" class="text-blue-400">From</label>
+                        <select class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-400 focus:bg-blue-300 focus:text-white" name="fromCurrencySelect" id="fromCurrencySelect"></select>
+                    </div>
+                    <div class="fieldWrapper flex flex-col gap-2">
+                        <label for="toCurrencySelect" class="text-blue-400">To</label>
+                        <select class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-400 focus:bg-blue-300 focus:text-white" name="" id="toCurrencySelect"></select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1">
+                    <div class="fieldWrapper flex flex-col gap-2">
+                        <label for="fromAmount" class="text-blue-400">Amount</label>
+                        <input class="rounded-sm py-3 px-6 bg-blue-200 border-2 border-transparent hover:border-blue-500 focus:ring-4 focus:ring-blue-500 outline-none focus:bg-blue-300 " type="number" name="fromAmount" id="fromAmount" min="1" value="1">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1">
+                    <button class="w-full h-12 mt-5 bg-blue-600 text-white rounded-sm hover:bg-blue-900 font-semibold text-lg" id='convertButton'>Convert</button>
+                </div>
+            </form>
+            <div class="bg-red-200 rounded-lg grid items-center justify-center" id="resultSection"></div>
         </div>
+
     </div>
     <script src="main.js"></script>
 </body>

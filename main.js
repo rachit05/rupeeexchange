@@ -50,9 +50,10 @@ function fetchRates(from, to, amount) {
 		.then(data => {
 			let rate = data.rates[`${to}`].rate;
 			let result = data.rates[`${to}`].rate_for_amount;
-			resultSection.innerHTML = `
-						<b>${amount} ${from}</b> = <b><span>${result} ${to}</span></b>
-						<p>AND &nbsp; <span>${amount} ${to} = ${(amount / rate).toPrecision(3)} ${from}</span></p>
+			resultSection.innerHTML = `<div class="">
+						<b class="text-3xl">${amount} ${from}</b> = <b class="text-3xl"><span>${result} ${to}</span></b>
+						<p class="text-red-400 mt-5">AND &nbsp; <span class="font-bold">${amount} ${to} = ${(amount / rate).toPrecision(3)} ${from}</span></p>
+						</div>
 					`
 		})
 		.catch(err => {
