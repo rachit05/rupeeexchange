@@ -51,7 +51,7 @@
 
         }
     ],
-    "start_url": "/index.html",
+    "start_url": "/",
     "background_color":"#fff",
 
     "display":"standalone",
