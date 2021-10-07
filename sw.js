@@ -9,19 +9,9 @@ self.addEventListener('install', function (event) {
 
 // const KEY = "key";
 
-// self.addEventListener('message', (event) => {
-//     // console.log(event.data)
-//     alert('hello')
-//     // return;
-//     if (event.data.type === 'CACHE_URLS') {
-//         event.waitUntil(
-//             caches.open(KEY)
-//             .then((cache) => {
-//                 return cache.addAll(["index.html", "style.css", "manifest.json", "list.json", "main.js"]);
-//             })
-//         );
-//     }
-// });
+self.addEventListener('message', (event) => {
+    console.log('[Service Worker] Message Recieved')
+});
 
 self.addEventListener('activate', function (event) {
     // self.

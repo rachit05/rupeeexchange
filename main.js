@@ -11,7 +11,7 @@ if ('serviceWorker' in navigator) {
                 //     ...performance.getEntriesByType('resource').map((r) => r.name)
                 // ]
             };
-			self.postMessage(data,registration)
+			self.postMessage(data,"*")
 			
         })
         .catch((err) => console.log('SW registration FAIL:', err));
