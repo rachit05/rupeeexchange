@@ -51,7 +51,7 @@
 
         }
     ],
-    "start_url": "https://swapster.netlify.app",
+    "start_url": "./",
     "background_color":"#fff",
 
     "display":"standalone",
