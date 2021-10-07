@@ -1,8 +1,9 @@
 
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+    navigator.serviceWorker.register('/sw.js', {scope:'/'})
         .then((registration) => {
+			console.log('[Service Worker] Registered successfully',registration.scope);
             const data = {
                 type: 'CACHE_URLS',
                 payload: [
@@ -10,7 +11,7 @@ if ('serviceWorker' in navigator) {
                     ...performance.getEntriesByType('resource').map((r) => r.name)
                 ]
             };
-            registration.installing.postMessage(data);
+			console.log(data)
         })
         .catch((err) => console.log('SW registration FAIL:', err));
 }
