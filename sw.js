@@ -1,26 +1,30 @@
-// self.addEventListener('install', function (event) {
-//     console.log('[Service Worker] Installing...')
-//     event.waitUntil(
-//         caches.open('sw-cache').then(function (cache) {
-//             return cache.addAll(['/']);
-//         })
-//     );
-// });
-
-const KEY = "key";
-
-self.addEventListener('message', (event) => {
-    if (event.data.type === 'CACHE_URLS') {
-        event.waitUntil(
-            caches.open(KEY)
-                .then( (cache) => {
-                    return cache.addAll(event.data.payload);
-                })
-        );
-    }
+self.addEventListener('install', function (event) {
+    console.log('[Service Worker] Installing...')
+    event.waitUntil(
+        caches.open('sw-cache').then(function (cache) {
+            return cache.addAll(["index.html", "style.css", "manifest.json", "list.json", "main.js"]);
+        })
+    );
 });
 
+// const KEY = "key";
+
+// self.addEventListener('message', (event) => {
+//     // console.log(event.data)
+//     alert('hello')
+//     // return;
+//     if (event.data.type === 'CACHE_URLS') {
+//         event.waitUntil(
+//             caches.open(KEY)
+//             .then((cache) => {
+//                 return cache.addAll(["index.html", "style.css", "manifest.json", "list.json", "main.js"]);
+//             })
+//         );
+//     }
+// });
+
 self.addEventListener('activate', function (event) {
+    // self.
     console.log('[Service Worker] Activating...');
 });
 

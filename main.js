@@ -6,12 +6,13 @@ if ('serviceWorker' in navigator) {
 			console.log('[Service Worker] Registered successfully',registration.scope);
             const data = {
                 type: 'CACHE_URLS',
-                payload: [
-                    location.href,
-                    ...performance.getEntriesByType('resource').map((r) => r.name)
-                ]
+                // payload: [
+                //     location.href,
+                //     ...performance.getEntriesByType('resource').map((r) => r.name)
+                // ]
             };
-			console.log(data)
+			self.postMessage(data,registration)
+			
         })
         .catch((err) => console.log('SW registration FAIL:', err));
 }
