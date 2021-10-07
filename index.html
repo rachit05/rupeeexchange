@@ -15,13 +15,13 @@
     <link rel="icon" href="./Favicon/favicon-144x144.png" sizes="144x144" type="image/png">
     <link rel="icon" href="./Favicon/favicon-196x196.png" sizes="196x196" type="image/png">
     <link rel="icon" href="./Favicon/favicon-512x512.png" sizes="512x512" type="image/png">
-    
+
     <link rel="stylesheet" href="style.css">
 
     <script>
         if('serviceWorker' in navigator){
             // console.log('[Service Worker Installed Successfully]')
-            navigator.serviceWorker.register('sw.js');
+            navigator.serviceWorker.register('/sw.js');
         }else{
             console.error('[Service Worker Was Not Installed.]')
         }
