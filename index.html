@@ -8,18 +8,27 @@
     <meta name="description" content="Web application for converting currencies">
     <meta name="theme-color" content="#fff">
     <link rel= "manifest" href= "manifest.json" />
+    <link rel="Favicon" href="./Favicon/Favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="Favicon" href="./Favicon/Favicon-48x48.png" sizes="48x48" type="image/png">
+    <link rel="Favicon" href="./Favicon/Favicon-64x64.png" sizes="64x64" type="image/png">
+    <link rel="Favicon" href="./Favicon/Favicon-96x96.png" sizes="96x96" type="image/png">
+    <link rel="Favicon" href="./Favicon/favicon-144x144.png" sizes="144x144" type="image/png">
+    <link rel="Favicon" href="./Favicon/favicon-196x196.png" sizes="196x196" type="image/png">
+    <link rel="Favicon" href="./Favicon/favicon-512x512.png" sizes="512x512" type="image/png">
+    <link rel="stylesheet" href="style.css">
 
     <script>
         if('serviceWorker' in navigator){
+            console.log('done')
             navigator.serviceWorker.register('sw.js');
+        }else{
+            console.log('noe')
         }
     </script>
 
     <title>Swapster - Currency Converter</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
 </head>
 
 <body>
